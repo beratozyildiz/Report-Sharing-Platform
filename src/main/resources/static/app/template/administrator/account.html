@@ -1,0 +1,57 @@
+<div>
+    <img style="width: 100%;" src="app/images/cc-1.jpg" alt="">
+    <div style="width: 250px;height: 20%;position:relative;top:-5vh;background-color: white">
+        <a href="/administrator/home"> <img style="margin-left: 11%;margin-top: 2%" src="app/images/dummylogo.png" alt=""></a>
+    </div>
+<div class="container">
+    <div class="row centered-form">
+        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 align="center" class="panel-title">{{account.name}} {{account.surname}}</small></h3>
+                </div>
+                <div class="panel-body" ng-controller="toastrCtrl as vm">
+                    <form role="form" ng-submit="save(account);vm.info()">
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" ng-required="true" ng-model="account.name" name="first_name"
+                                           id="first_name" class="form-control input-sm floatlabel"
+                                           placeholder="First Name">
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" ng-required="true" ng-model="account.surname" name="last_name"
+                                           id="last_name" class="form-control input-sm" placeholder="Last Name">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" ng-required="true" ng-model="account.email" name="email" id="email"
+                                   class="form-control input-sm" placeholder="Email Address">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" ng-required="true" ng-model="account.password" name="password" id="password" class="form-control input-sm"
+                                   placeholder="Password" required="">
+                        </div>
+                        <input type="submit" id="submit" value="Submit" class="btn btn-info btn-block">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+
+    .centered-form .panel {
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+    }
+
+    label.label-floatlabel {
+        font-weight: bold;
+        color: #46b8da;
+        font-size: 11px;
+    }</style>

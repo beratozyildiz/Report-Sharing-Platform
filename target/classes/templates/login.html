@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Report Sharing Platform</title>
+    <base href="/">
+
+    <link th:href="@{https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css}" type="text/css" rel="stylesheet"
+          id="bootstrap-css">
+</head>
+<body class="text-center">
+<div style="margin-top: 10%;margin-bottom: 2%" align="center">
+    <img src="app/images/dummylogo.png">
+</div>
+    <div class="container" style="margin-top: 3%">
+        <div class="row centered-form">
+            <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Sign In</small></h3>
+                    </div>
+                    <div class="panel-body">
+                        <form th:action="@{/login}" method="post">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <input type="text" ng-required="true" ng-model="account.email" name="email" id="email"
+                                       class="form-control input-sm" placeholder="Username" aria-describedby="basic-addon2">
+                                <span class="input-group-addon" id="basic-addon2">@dummytech.com</span>
+                            </div>
+                            <div style="margin-top: 5%" class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                <input type="password" ng-required="true" ng-model="account.password"
+                                       name="password" id="password" class="form-control input-sm"
+                                       placeholder="Password">
+                            </div>
+                            <div th:if="${param.error}">
+                                Invalid email and password
+                            </div>
+                            <div th:if="${param.logout}">
+                                You have been logged out
+                            </div>
+                            <div class="form-group" style="margin-top: 5%">
+                                <input type="submit" id="submit" value="Login" class="btn btn-info btn-block">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+
+        .centered-form .panel {
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: rgba(0, 0, 0, .3) 20px 20px 20px;
+        }
+    </style>
+
+</body>
+</html>

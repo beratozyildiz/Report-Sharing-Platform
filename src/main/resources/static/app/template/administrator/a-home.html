@@ -1,0 +1,28 @@
+<div class="wrapper" >
+    <header>
+        <nav>
+            <div class="menu-icon">
+                <i class="fa fa-bars fa-2x"></i>
+            </div>
+            <div class="logo">
+                Report Sharing Platform
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a class="cool-link" href="/administrator/{{actor.id}}/account-list">Account List </a></li>
+                    <li><a class="cool-link" href="/administrator/{{actor.id}}/report-list">Report List</a></li>
+                    <li><a class="cool-link" href="/administrator/{{actor.id}}/log-list">Log List</a></li>
+                    <li><form id="my_form" action="/signup" method="get">
+                        <a class="cool-link" href="javascript:{}" onclick="document.getElementById('my_form').submit();">Create New Account</a>
+                    </form></li>
+                    <li><form id="my_form2" action="/logout" method="post">
+                        <a class="cool-link" href="javascript:{}" onclick="document.getElementById('my_form2').submit();">Sign Out</a>
+                    </form></li>
+                </ul>
+            </div>
+        </nav>
+        <div style="width: 250px;height: 20%;position:relative;top:80%;background-color: white">
+            <img style="margin-left: 11%;margin-top: 2%" src="app/images/dummylogo.png" alt="">
+        </div>
+    </header>
+</div>

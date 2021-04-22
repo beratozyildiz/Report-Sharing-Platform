@@ -1,0 +1,25 @@
+<div class="wrapper">
+    <header>
+        <nav>
+            <div class="menu-icon">
+                <i class="fa fa-bars fa-2x"></i>
+            </div>
+            <div class="logo">
+                Report Sharing Platform
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a class="cool-link" href="/evaluator/{{actor.id}}/report-list">My Reports</a></li>
+                    <li><a class="cool-link" href="/evaluator/{{actor.id}}/create-report">Create Report</a></li>
+                    <li><form id="my_form2" action="/logout" method="post">
+                        <a class="cool-link" href="javascript:{}" onclick="document.getElementById('my_form2').submit();">Sign Out</a>
+                    </form></li>
+                </ul>
+            </div>
+        </nav>
+        <div style="width: 250px;height: 20%;position:relative;top:80%;background-color: white">
+            <img style="margin-left: 11%;margin-top: 2%" src="app/images/dummylogo.png" alt="">
+        </div>
+    </header>
+</div>
+<h1 align="center">Welcome {{actor.name}}</h1>

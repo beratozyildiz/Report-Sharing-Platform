@@ -1,0 +1,54 @@
+<div>
+    <img style="width: 100%;" src="app/images/hakkimzida.jpg" alt="">
+</div>
+<div style="width: 250px;height: 20%;position:relative;top:80%;background-color: white">
+    <a href="/administrator/home"> <img style="margin-left: 11%;margin-top: -10%" src="app/images/dummylogo.png" alt=""></a>
+</div>
+<div class="container">
+    <h2 style="text-align: center">Account List</h2>
+    <div style="margin-bottom: 3%;margin-top: 3%" class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+        <input style="height: 30px" placeholder="Search" ng-model="search"></div>
+    <table class="table table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="account in accounts | filter:search " ng-class-even="'even'" ng-class-odd="'odd'">
+            <td><a ng-href="/administrator/{{actor.id}}/account/{{account.id}}">{{account.name}}</a></td>
+            <td>{{account.surname}}</td>
+            <td>{{account.email}}</td>
+            <td>{{account.role[0].authorization}}</td>
+            <td ng-controller="toastrCtrl as vm">
+                <button class="btn btn-danger" ng-click="delete(account);vm.error()">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<style>
+    .even {
+        background: rgba(156, 233, 255, 0.25);
+    }
+
+    .even-add, .even-remove {
+        transition: 1.5s;
+    }
+
+    .odd {
+        background: rgba(221, 221, 221, 0.25);
+    }
+
+    .odd-add, .odd-remove {
+        transition: 1.5s;
+    }
+</style>

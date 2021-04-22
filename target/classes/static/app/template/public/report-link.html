@@ -1,0 +1,66 @@
+<div>
+    <img style="width: 100%;" src="app/images/cc-1.jpg" alt="">
+    <div style="width: 250px;height: 20%;position:relative;top:-5vh;background-color: white">
+        <img style="margin-left: 11%;margin-top: 2%" src="app/images/dummylogo.png" alt="">
+    </div>
+</div>
+<div class="container">
+    <div class="row centered-form">
+        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 align="center" class="panel-title">Download Report</small></h3>
+                </div>
+                <div class="panel-body">
+                    <form role="form">
+                        <div class="form-group"  ng-if="report.linkProperties.statusOfThePublicLink">
+                            <label for="name">Document Name</label>
+                            <input style="text-align: center" type="text" readonly class="form-control-plaintext"
+                                   id="name"  ng-value="report.document.name">
+                        </div>
+                        <div class="form-group" ng-if="report.linkProperties.statusOfThePublicLink">
+                            <label for="name">Document Type</label>
+                            <input style="text-align: center" type="text" readonly class="form-control-plaintext"
+                                   id="type"  ng-value="report.document.type">
+                        </div>
+                        <div class="form-group" ng-if="report.linkProperties.statusOfThePublicLink">
+                            <label for="name">Document Size</label>
+                            <input style="text-align: center" type="text" readonly class="form-control-plaintext"
+                                   id="size"  ng-value="report.document.size">
+                        </div>
+                        <div ng-show="!report.linkProperties.statusOfThePublicLink">
+                            <h5 align="center">The document is unreachable</h5>
+                        </div>
+                        <div class="form-group" ng-if="report.linkProperties.statusOfThePublicLink" >
+                            <div ng-controller="toastrCtrl as vm">
+                                <input type="button" class="btn btn-primary btn-block" value="Download Report" ng-click="downloadQR();gotoFile()">
+
+                            </div>
+                        </div>
+                        <div class="form-group" ng-if="report.linkProperties.linkPermission =='write' && report.linkProperties.statusOfThePublicLink">
+                            <div ng-controller="toastrCtrl as vm">
+                                <input type="button" ng-click="gotoResponse()"
+                                       value="Upload Your Response"
+                                       class="btn btn-info btn-block">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div ng-controller="toastrCtrl as vm">
+                                <input type="button" value="Report Validation" ng-click="gotoValidation()"
+                                       class="btn btn-warning btn-block">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+
+    .centered-form .panel {
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+    }
+
+</style>
